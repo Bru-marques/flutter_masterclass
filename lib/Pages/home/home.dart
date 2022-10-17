@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:playground/Pages/recursive_function.dart';
+import 'package:playground/Pages/class-one/recursive_function.dart';
+import 'package:playground/Pages/class-one/rule_of_three.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -14,6 +15,7 @@ class Home extends StatelessWidget {
     return (Column(
       children: [
         _linkPage(context, 'Função Recursiva', const RecursiveFunction()),
+        _linkPage(context, 'Regra de 3', const RoleOfTrhee()),
       ],
     ));
   }
