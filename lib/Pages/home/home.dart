@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:playground/Pages/class-one/credt_card_validator.dart';
 import 'package:playground/Pages/class-one/recursive_function.dart';
 import 'package:playground/Pages/class-one/rule_of_three.dart';
 
@@ -16,6 +17,8 @@ class Home extends StatelessWidget {
       children: [
         _linkPage(context, 'Função Recursiva', const RecursiveFunction()),
         _linkPage(context, 'Regra de 3', const RoleOfTrhee()),
+        _linkPage(context, 'Validador de Cartão de Crédito',
+            const CreditCardValidator()),
       ],
     ));
   }

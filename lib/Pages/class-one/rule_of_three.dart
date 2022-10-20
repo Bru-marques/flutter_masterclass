@@ -7,10 +7,10 @@ class RoleOfTrhee extends StatefulWidget {
   State<RoleOfTrhee> createState() => _RoleOfTrheeState();
 }
 
+var d = '0';
 var a = '0';
 var b = '0';
 var c = '0';
-var d = '0';
 var newValue = '';
 var result = '';
 
