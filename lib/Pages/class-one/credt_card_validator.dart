@@ -1,6 +1,5 @@
-// ignore_for_file: avoid_print
-
 import 'package:flutter/material.dart';
+import 'package:playground/util/custom_text.dart';
 
 class CreditCardValidator extends StatefulWidget {
   const CreditCardValidator({Key? key}) : super(key: key);
@@ -29,17 +28,17 @@ class _CreditCardValidatorState extends State<CreditCardValidator> {
   }
 
   _body() {
-    print(sumAll / 10);
     return (Padding(
       padding: const EdgeInsets.all(20),
       child: Form(
         child: Column(
           children: [
-            _text('Insira o numero do seu cartão de crédito', ''),
+            const CustomText('Insira o numero do seu cartão de crédito', ''),
             TextFormField(
                 initialValue: '',
                 keyboardType: TextInputType.number,
                 validator: (value) => _validator(value),
+                autovalidateMode: AutovalidateMode.always,
                 onChanged: (value) {
                   setState(() {
                     cardValue = value;
@@ -52,13 +51,14 @@ class _CreditCardValidatorState extends State<CreditCardValidator> {
                       borderRadius: BorderRadius.circular(8))),
               child: const Text('Validar'),
             ),
-            _text('1 - Ultimo digito: ', '$lastDigit'),
-            _text('2 - Index impar * 1 e  index par * 2 :', '$newCardArray'),
-            _text('2 - Soma de todos os valores :', '$sumAll'),
-            _text('3 - Soma dividido por 10:', '$dividedByTem'),
-            _text('3 - Resto da  divisão:', '$fraction'),
-            _text('4 - Resto  - 10:', '$subtracttem'),
-            _text('5 - Resultado', '$result'),
+            CustomText('1 - Ultimo digito: ', '$lastDigit'),
+            CustomText(
+                '2 - Index impar * 1 e  index par * 2 :', '$newCardArray'),
+            CustomText('2 - Soma de todos os valores :', '$sumAll'),
+            CustomText('3 - Soma dividido por 10:', '$dividedByTem'),
+            CustomText('3 - Resto da  divisão:', '$fraction'),
+            CustomText('4 - Resto  - 10:', '$subtracttem'),
+            CustomText('5 - Resultado', '$result'),
           ],
         ),
       ),
@@ -73,20 +73,19 @@ class _CreditCardValidatorState extends State<CreditCardValidator> {
   }
 
   _handleValidator() {
-    var num = 0;
-    int index = 0;
-    int newNumber = 0;
-    var doubleNum = '';
+    var newNumber = 0;
     var newDouble = 0;
+
+    //parse input into numbers
     cardArray = (cardValue).split('').map((item) {
       return int.parse(item);
     }).toList();
-    lastDigit = cardArray.last;
+    lastDigit = cardArray.isNotEmpty ? cardArray.last : 0;
     setState(() {
       newCardArray = cardArray.asMap().entries.map((item) {
-        index = item.key;
-        num = item.value;
-        doubleNum = (num * 2).toString();
+        var index = item.key;
+        var num = item.value;
+        var doubleNum = (num * 2).toString();
 
         if (doubleNum.length > 1) {
           doubleNum.split('');
@@ -100,38 +99,15 @@ class _CreditCardValidatorState extends State<CreditCardValidator> {
                 : num * 2;
         return newNumber;
       }).toList();
-      sumAll = newCardArray.reduce(
-        (value, element) => value + element,
-      );
+      sumAll = newCardArray.isNotEmpty
+          ? newCardArray.reduce(
+              (value, element) => value + element,
+            )
+          : 0;
       dividedByTem = sumAll / 10;
       fraction = dividedByTem - dividedByTem.truncate();
       subtracttem = fraction > 0 ? fraction - 10 : fraction;
       result = lastDigit == subtracttem;
     });
-  }
-
-  _text(String label, String result) {
-    return Column(
-      children: [
-        Text(
-          label,
-          style: const TextStyle(
-            fontWeight: FontWeight.bold,
-            overflow: TextOverflow.visible,
-            fontFamily: 'Poppins',
-            fontSize: 16,
-          ),
-        ),
-        Text(
-          result,
-          style: const TextStyle(
-            overflow: TextOverflow.visible,
-            fontFamily: 'Poppins',
-            fontSize: 16,
-          ),
-        ),
-        const SizedBox(height: 10)
-      ],
-    );
   }
 }
