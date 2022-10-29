@@ -20,7 +20,7 @@ class MoneyControll extends StatelessWidget {
             _button('Sign Up with Email ID', 'purple'),
             _button('Sign Up with Google', 'white'),
             const SizedBox(height: 60),
-            _footerText()
+            _footerText(context)
           ],
         ));
   }
@@ -119,7 +119,7 @@ class MoneyControll extends StatelessWidget {
     );
   }
 
-  Widget _footerText() {
+  Widget _footerText(context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -132,6 +132,7 @@ class MoneyControll extends StatelessWidget {
           ),
         ),
         GestureDetector(
+          onTap: () => Navigator.pop(context),
           child: const Padding(
             padding: EdgeInsets.all(8.0),
             child: Text(
