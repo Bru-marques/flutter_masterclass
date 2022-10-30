@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:playground/Pages/class-four/money-controll/money_controll.dart';
+import 'package:playground/Pages/class-four/money_controll.dart';
+import 'package:playground/Pages/class-four/tinder.dart';
 import 'package:playground/Pages/class-one/cpf_validator.dart';
 import 'package:playground/Pages/class-one/credt_card_validator.dart';
 import 'package:playground/Pages/class-one/recursive_function.dart';
@@ -27,7 +28,8 @@ class Home extends StatelessWidget {
           _linkPage(context, '4. Validaror de CPF', const CpfValidadtor()),
           const Divider(color: Color.fromARGB(255, 12, 72, 156)),
           _title('Desafios Aula 3'),
-          _linkPage(context, '5. Money Control Layout', const MoneyControll()),
+          _linkPage(context, '5. Money Controll Layout', const MoneyControll()),
+          _linkPage(context, '6. Tinder Layout', const Tinder()),
         ],
       )),
     );
