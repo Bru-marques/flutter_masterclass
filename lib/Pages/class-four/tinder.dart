@@ -15,8 +15,10 @@ class Tinder extends StatelessWidget {
     ],
   );
 
-  final String appleIcon = 'assets/images/apple_logo_white.svg';
   final String logoIcon = 'assets/images/tinder_logo.svg';
+  final String appleIcon = 'assets/images/apple_logo_white.svg';
+  final String facebookIcon = 'assets/images/facebook-round.svg';
+  final String phoneIcon = 'assets/images/Mobile-Icon-White-on-Grey.svg';
 
   @override
   Widget build(BuildContext context) {
@@ -34,11 +36,11 @@ class Tinder extends StatelessWidget {
                 const SizedBox(height: 100),
                 _description(context),
                 const SizedBox(height: 40),
-                _button('appleIcon', 'SIGN IN WITH APPLE'),
+                _button(appleIcon, 'SIGN IN WITH APPLE'),
                 const SizedBox(height: 10),
-                _button('appleIcon', 'SIGN IN WITH'),
+                _button(facebookIcon, 'SIGN IN WITH FACEBOOK'),
                 const SizedBox(height: 10),
-                _button('appleIcon', 'SIGN IN WITH'),
+                _button(phoneIcon, 'SIGN IN WITH PHONE NUMBER'),
                 const SizedBox(height: 20),
                 _footerText(),
                 const SizedBox(height: 20),
@@ -84,57 +86,94 @@ class Tinder extends StatelessWidget {
   }
 
   Widget _description(context) {
-    return RichText(
-        textAlign: TextAlign.center,
-        text: const TextSpan(
-          text: 'By tapping Create Account or Simg In, you agree to our ',
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.w400,
-            fontSize: 14,
-          ),
-          children: [
-            TextSpan(
-                text: 'Terms',
-                style: TextStyle(
-                  decoration: TextDecoration.underline,
-                  fontWeight: FontWeight.bold,
-                )),
-            TextSpan(text: '. Learn how we process your data in our '),
-            TextSpan(
-                text: 'Privacity Policy',
-                style: TextStyle(
-                  decoration: TextDecoration.underline,
-                  fontWeight: FontWeight.bold,
-                )),
-            TextSpan(text: ' and '),
-            TextSpan(
-                text: 'Cookies Policy',
-                style: TextStyle(
-                  decoration: TextDecoration.underline,
-                  fontWeight: FontWeight.bold,
-                )),
-          ],
-        ));
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10),
+      child: RichText(
+          textAlign: TextAlign.center,
+          text: const TextSpan(
+            text: 'By tapping Create Account or Sign In, you agree to our ',
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.w400,
+              fontSize: 13,
+            ),
+            children: [
+              TextSpan(
+                  text: 'Terms',
+                  style: TextStyle(
+                    decoration: TextDecoration.underline,
+                    fontWeight: FontWeight.w600,
+                  )),
+              TextSpan(text: '. Learn how we process your data in our '),
+              TextSpan(
+                  text: 'Privacity Policy',
+                  style: TextStyle(
+                    decoration: TextDecoration.underline,
+                    fontWeight: FontWeight.w600,
+                  )),
+              TextSpan(text: ' and '),
+              TextSpan(
+                  text: 'Cookies Policy',
+                  style: TextStyle(
+                    decoration: TextDecoration.underline,
+                    fontWeight: FontWeight.w600,
+                  )),
+            ],
+          )),
+    );
   }
 
   Widget _footerText() {
-    return Text(
+    return const Text(
       'Trouble Sign In?',
       style: TextStyle(
         color: Colors.white,
-        fontWeight: FontWeight.w400,
+        fontWeight: FontWeight.w600,
         fontSize: 14,
       ),
     );
   }
 
-  _button(String logo, String label) {
+  Widget _button(String logo, String label) {
     return Container(
-        height: 52,
-        width: double.infinity,
-        decoration: BoxDecoration(
-            border: Border.all(color: Colors.white, width: 2),
-            borderRadius: BorderRadius.circular(25)));
+      height: 52,
+      width: double.infinity,
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+          border: Border.all(color: Colors.white, width: 2),
+          borderRadius: BorderRadius.circular(25)),
+      child: Stack(
+        children: [
+          Align(
+            alignment: Alignment.centerLeft,
+            child: logo == phoneIcon
+                ? Icon(
+                    Icons.messenger_rounded,
+                    color: Colors.white,
+                    size: 20,
+                  )
+                : SvgPicture.asset(
+                    logo,
+                    color: Colors.white,
+                    height: 20,
+                    semanticsLabel: 'contact logo',
+                  ),
+          ),
+          const SizedBox(width: 8),
+          Container(
+            alignment: Alignment.center,
+            child: Text(
+              label,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.w600,
+                fontSize: 14,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
