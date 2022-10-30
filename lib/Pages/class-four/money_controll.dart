@@ -150,7 +150,3 @@ class MoneyControll extends StatelessWidget {
     );
   }
 }
-
-// child: Center(
-//             child: SvgPicture.asset('assets/images/apple_logo_white.svg',
-                // color: Colors.red, semanticsLabel: 'A red up arrow')));
