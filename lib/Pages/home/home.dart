@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:playground/Pages/class-four/blue_login.dart';
 import 'package:playground/Pages/class-four/money_controll.dart';
 import 'package:playground/Pages/class-four/tinder.dart';
 import 'package:playground/Pages/class-one/cpf_validator.dart';
@@ -9,10 +10,15 @@ import 'package:playground/Pages/class-one/rule_of_three.dart';
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
 
+  static Color purple = const Color(0xff4D5ABE);
   @override
   Widget build(BuildContext context) {
     return (Scaffold(
-        appBar: AppBar(title: const Text('Playground')), body: _body(context)));
+        appBar: AppBar(
+            backgroundColor: purple,
+            title: const Text('Playground',
+                style: TextStyle(fontFamily: 'Charlet', fontSize: 26))),
+        body: _body(context)));
   }
 
   _body(context) {
@@ -30,6 +36,7 @@ class Home extends StatelessWidget {
           _title('Desafios Aula 3'),
           _linkPage(context, '5. Money Controll Layout', const MoneyControll()),
           _linkPage(context, '6. Tinder Layout', const Tinder()),
+          _linkPage(context, '7. Login Layout 01', const BlueLogin()),
         ],
       )),
     );
