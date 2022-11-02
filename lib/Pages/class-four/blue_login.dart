@@ -129,39 +129,44 @@ class BlueLogin extends StatelessWidget {
   }
 
   Widget _loginButton(context) {
-    return Padding(
-      padding: EdgeInsets.only(
-          left: 70.0, right: 70, top: MediaQuery.of(context).size.height * .78),
-      child: Column(
-        children: [
-          Container(
-            height: 64,
-            width: double.infinity,
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 25, 103, 205),
-              borderRadius: BorderRadius.circular(30),
-              boxShadow: const [
-                BoxShadow(
-                    blurRadius: 6,
-                    color: Color.fromARGB(231, 130, 163, 255),
-                    spreadRadius: 1,
-                    offset: Offset(0, 1))
-              ],
+    return GestureDetector(
+      onTap: () => Navigator.pop(context),
+      child: Padding(
+        padding: EdgeInsets.only(
+            left: 70.0,
+            right: 70,
+            top: MediaQuery.of(context).size.height * .78),
+        child: Column(
+          children: [
+            Container(
+              height: 64,
+              width: double.infinity,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: const Color.fromARGB(255, 25, 103, 205),
+                borderRadius: BorderRadius.circular(30),
+                boxShadow: const [
+                  BoxShadow(
+                      blurRadius: 6,
+                      color: Color.fromARGB(231, 130, 163, 255),
+                      spreadRadius: 1,
+                      offset: Offset(0, 1))
+                ],
+              ),
+              child: const Text('LOGIN',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600)),
             ),
-            child: const Text('LOGIN',
+            const SizedBox(height: 30),
+            const Text('FORGOT PASSWORD?',
                 style: TextStyle(
-                    color: Colors.white,
+                    color: Colors.black45,
                     fontSize: 14,
-                    fontWeight: FontWeight.w600)),
-          ),
-          const SizedBox(height: 30),
-          const Text('FORGOT PASSWORD?',
-              style: TextStyle(
-                  color: Colors.black45,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w800)),
-        ],
+                    fontWeight: FontWeight.w800)),
+          ],
+        ),
       ),
     );
   }
