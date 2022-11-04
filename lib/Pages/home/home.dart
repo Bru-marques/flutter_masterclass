@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:playground/Pages/class-four/blue_login.dart';
-import 'package:playground/Pages/class-four/money_controll.dart';
-import 'package:playground/Pages/class-four/tinder.dart';
+import 'package:playground/Pages/class-three/blue_login.dart';
+import 'package:playground/Pages/class-three/money_controll.dart';
+import 'package:playground/Pages/class-three/tinder.dart';
 import 'package:playground/Pages/class-one/cpf_validator.dart';
 import 'package:playground/Pages/class-one/credt_card_validator.dart';
 import 'package:playground/Pages/class-one/recursive_function.dart';
 import 'package:playground/Pages/class-one/rule_of_three.dart';
+import 'package:playground/Pages/class-three/vigenere_cipher.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -34,9 +35,11 @@ class Home extends StatelessWidget {
           _linkPage(context, '4. Validaror de CPF', const CpfValidadtor()),
           const Divider(color: Color.fromARGB(255, 12, 72, 156)),
           _title('Desafios Aula 3'),
-          _linkPage(context, '5. Money Controll Layout', const MoneyControll()),
-          _linkPage(context, '6. Tinder Layout', const Tinder()),
-          _linkPage(context, '7. Login Layout 01', const BlueLogin()),
+          _linkPage(
+              context, '5. Money Controll Login Layout', const MoneyControll()),
+          _linkPage(context, '6. Tinder Login Layout', const Tinder()),
+          _linkPage(context, '7. Blue Login Layout', const BlueLogin()),
+          _linkPage(context, '8. Vigenère cipher', const VigenereCipher()),
         ],
       )),
     );
