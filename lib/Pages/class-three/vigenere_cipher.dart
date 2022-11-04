@@ -44,6 +44,7 @@ class _VigenereCipherState extends State<VigenereCipher> {
                 input = value;
               });
             }),
+            const SizedBox(height: 12),
             _customText('1. Random key:  ', _randomKey()),
             const SizedBox(height: 12),
             _customText('2. Encode:  ', _encode()),

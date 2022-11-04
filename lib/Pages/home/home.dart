@@ -11,12 +11,10 @@ import 'package:playground/Pages/class-three/vigenere_cipher.dart';
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
 
-  static Color purple = const Color(0xff4D5ABE);
   @override
   Widget build(BuildContext context) {
     return (Scaffold(
         appBar: AppBar(
-            backgroundColor: purple,
             title: const Text('Playground',
                 style: TextStyle(fontFamily: 'Charlet', fontSize: 26))),
         body: _body(context)));
