@@ -7,6 +7,11 @@ A new Flutter project.
 This project is my laboratory of experiments in flutter.
 Enjoy!
 
+=> List of challanges:
+[1. recursive function algorithm]()
+
+
+
 
 
 For help getting started with Flutter development, view the
