@@ -147,7 +147,7 @@ class Tinder extends StatelessWidget {
           Align(
             alignment: Alignment.centerLeft,
             child: logo == phoneIcon
-                ? Icon(
+                ? const Icon(
                     Icons.messenger_rounded,
                     color: Colors.white,
                     size: 20,

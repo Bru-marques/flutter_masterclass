@@ -13,8 +13,8 @@ class BlueLogin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
+    return Material(
+      child: Stack(
         alignment: AlignmentDirectional.center,
         children: [
           Expanded(

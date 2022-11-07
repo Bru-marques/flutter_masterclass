@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:playground/Pages/class-four/facebook-responsive-login/facebook_responsive_login.dart';
 import 'package:playground/Pages/class-three/blue_login.dart';
 import 'package:playground/Pages/class-three/money_controll.dart';
 import 'package:playground/Pages/class-three/tinder.dart';
@@ -38,6 +39,10 @@ class Home extends StatelessWidget {
           _linkPage(context, '6. Tinder Login Layout', const Tinder()),
           _linkPage(context, '7. Blue Login Layout', const BlueLogin()),
           _linkPage(context, '8. Vigenère cipher', const VigenereCipher()),
+          const Divider(color: Color.fromARGB(255, 12, 72, 156)),
+          _title('Desafios Aula 4'),
+          _linkPage(context, '9. Facebook Responsive Login Layout',
+              const FacebookResponsiveLogin()),
         ],
       )),
     );

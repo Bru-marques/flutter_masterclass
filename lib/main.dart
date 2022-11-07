@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:playground/Pages/class-four/facebook-responsive-login/facebook_responsive_login.dart';
 import 'package:playground/Pages/home/home.dart';
 
 void main() {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.indigo,
       ),
-      home: const Home(),
+      home: const FacebookResponsiveLogin(),
     );
   }
 }
