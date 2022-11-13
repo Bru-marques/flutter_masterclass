@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:playground/Pages/class-four/animation-one/animation_one.dart';
+import 'package:playground/Pages/class-four/animation-two.dart/animation_two.dart';
 import 'package:playground/Pages/class-four/facebook-responsive-login/facebook_responsive_login.dart';
 import 'package:playground/Pages/class-three/blue_login.dart';
 import 'package:playground/Pages/class-three/money_controll.dart';
@@ -24,7 +26,7 @@ class Home extends StatelessWidget {
   _body(context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: (Column(
+      child: (ListView(
         children: [
           _title('Desafios Aula 1'),
           _linkPage(context, '1. Função Recursiva', const RecursiveFunction()),
@@ -39,10 +41,21 @@ class Home extends StatelessWidget {
           _linkPage(context, '6. Tinder Login Layout', const Tinder()),
           _linkPage(context, '7. Blue Login Layout', const BlueLogin()),
           _linkPage(context, '8. Vigenère cipher', const VigenereCipher()),
+          // const Divider(color: Color.fromARGB(255, 12, 72, 156)),
+          // _title('Desafios Aula 4'),
+          // _linkPage(
+          //   context,
+          //   '9. Facebook Responsive Login Layout',
+          //   const FacebookResponsiveLogin(),
+          // ),
           const Divider(color: Color.fromARGB(255, 12, 72, 156)),
-          _title('Desafios Aula 4'),
-          _linkPage(context, '9. Facebook Responsive Login Layout',
-              const FacebookResponsiveLogin()),
+          _title('Desafios Aula 5'),
+          _linkPage(
+            context,
+            '10. Animation one',
+            const AnimationOne(),
+          ),
+          _linkPage(context, '11. Animation two', const AnimationTwo()),
         ],
       )),
     );
