@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class MoneyControll extends StatelessWidget {
-  const MoneyControll({Key? key}) : super(key: key);
+class MoneyControl extends StatelessWidget {
+  const MoneyControl({Key? key}) : super(key: key);
 
   final Color purple = const Color(0xff5E5CE5);
   @override

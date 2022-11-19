@@ -16,7 +16,7 @@ Enjoy!
 
 [4. CPF validator algorithm](https://github.com/Bru-marques/flutter_masterclass/blob/main/assets/images/mockups/04_cpf_validator_algorithm.png)
 
-[5. Money Controll login layout](https://github.com/Bru-marques/flutter_masterclass/blob/main/assets/images/mockups/05_money_controll_login_layout.png)
+[5. Money Control login layout](https://github.com/Bru-marques/flutter_masterclass/blob/main/assets/images/mockups/05_money_controll_login_layout.png)
 
 [6. Tinder login layout](https://github.com/Bru-marques/flutter_masterclass/blob/main/assets/images/mockups/06_tinder_login_layout.png)
 

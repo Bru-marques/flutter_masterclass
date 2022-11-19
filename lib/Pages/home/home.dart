@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:playground/Pages/class-four/animation-one/animation_one.dart';
-import 'package:playground/Pages/class-four/animation-two.dart/animation_two.dart';
+import 'package:playground/Pages/class-four/animation-one/controlled_animation_one.dart';
+import 'package:playground/Pages/class-four/animation-one/implicit_animation_one.dart';
+import 'package:playground/Pages/class-four/animation-two.dart/implicit_animation_two.dart';
 import 'package:playground/Pages/class-four/facebook-responsive-login/facebook_responsive_login.dart';
 import 'package:playground/Pages/class-three/blue_login.dart';
 import 'package:playground/Pages/class-three/money_controll.dart';
@@ -28,34 +29,28 @@ class Home extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: (ListView(
         children: [
-          _title('Desafios Aula 1'),
           _linkPage(context, '1. Função Recursiva', const RecursiveFunction()),
           _linkPage(context, '2. Regra de 3', const RoleOfTrhee()),
           _linkPage(context, '3. Validador de Cartão de Crédito',
               const CreditCardValidator()),
           _linkPage(context, '4. Validaror de CPF', const CpfValidadtor()),
-          const Divider(color: Color.fromARGB(255, 12, 72, 156)),
-          _title('Desafios Aula 3'),
           _linkPage(
-              context, '5. Money Controll Login Layout', const MoneyControll()),
+              context, '5. Money Control Login Layout', const MoneyControl()),
           _linkPage(context, '6. Tinder Login Layout', const Tinder()),
           _linkPage(context, '7. Blue Login Layout', const BlueLogin()),
           _linkPage(context, '8. Vigenère cipher', const VigenereCipher()),
-          // const Divider(color: Color.fromARGB(255, 12, 72, 156)),
-          // _title('Desafios Aula 4'),
-          // _linkPage(
-          //   context,
-          //   '9. Facebook Responsive Login Layout',
-          //   const FacebookResponsiveLogin(),
-          // ),
-          const Divider(color: Color.fromARGB(255, 12, 72, 156)),
-          _title('Desafios Aula 5'),
           _linkPage(
             context,
-            '10. Animation one',
-            const AnimationOne(),
+            '10. Implicit Animation one',
+            const ImplicitAnimationOne(),
           ),
-          _linkPage(context, '11. Animation two', const AnimationTwo()),
+          _linkPage(
+            context,
+            '11. Controlled Animation one',
+            const ControlledAnimationOne(),
+          ),
+          _linkPage(context, '12. Implicit Animation two',
+              const ImplicitAnimationTwo()),
         ],
       )),
     );
@@ -83,16 +78,5 @@ class Home extends StatelessWidget {
             ],
           )),
     ));
-  }
-
-  Widget _title(String title) {
-    return Text(
-      title,
-      style: const TextStyle(
-        height: 2,
-        fontFamily: 'Poppins',
-        fontSize: 18,
-      ),
-    );
   }
 }

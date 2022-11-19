@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:playground/Pages/class-four/animation-two.dart/animatio_class.dart';
+import 'package:playground/models/animatio_two_model.dart';
 import 'package:playground/Pages/class-four/animation-two.dart/widgets/list_item_widget.dart';
 
-class AnimationTwo extends StatefulWidget {
-  const AnimationTwo({super.key});
+class ImplicitAnimationTwo extends StatefulWidget {
+  const ImplicitAnimationTwo({super.key});
 
   @override
-  State<AnimationTwo> createState() => _AnimationTwoState();
+  State<ImplicitAnimationTwo> createState() => _ImplicitAnimationTwoState();
 }
 
 bool isOpen = false;
@@ -14,7 +14,7 @@ String _description =
     'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ,.Lorem Ipsum has been the industrys standard dummy text ever since the 1500s';
 // List<int> generatedIndex = List<int>.generate(50, (index) => index);
 
-class _AnimationTwoState extends State<AnimationTwo> {
+class _ImplicitAnimationTwoState extends State<ImplicitAnimationTwo> {
   int? itemSelected;
   @override
   Widget build(BuildContext context) {

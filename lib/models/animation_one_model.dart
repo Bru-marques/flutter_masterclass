@@ -25,8 +25,8 @@ class Circle extends Shape {
         );
 }
 
-class Rectangle extends Shape {
-  const Rectangle({
+class GlobalShape extends Shape {
+  const GlobalShape({
     required super.height,
     required super.width,
     required super.borderRadius,

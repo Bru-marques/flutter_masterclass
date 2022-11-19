@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:playground/Pages/class-four/animation-two.dart/animatio_class.dart';
+import 'package:playground/models/animatio_two_model.dart';
 
 class ListItemWidget extends StatelessWidget {
   final ListItem listItem;

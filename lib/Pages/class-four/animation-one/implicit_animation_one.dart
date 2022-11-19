@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:playground/Pages/class-four/animation-one/animation_class.dart';
+import 'package:playground/models/animation_one_model.dart';
 
-class AnimationOne extends StatefulWidget {
-  const AnimationOne({super.key});
+class ImplicitAnimationOne extends StatefulWidget {
+  const ImplicitAnimationOne({super.key});
 
   @override
-  State<AnimationOne> createState() => _AnimationOneState();
+  State<ImplicitAnimationOne> createState() => _ImplicitAnimationOneState();
 }
 
-class _AnimationOneState extends State<AnimationOne> {
+class _ImplicitAnimationOneState extends State<ImplicitAnimationOne> {
   bool isAnimated = false;
 
   @override
@@ -27,14 +27,14 @@ class _AnimationOneState extends State<AnimationOne> {
       child: AnimatedAlign(
         curve: Curves.easeInOut,
         duration: const Duration(milliseconds: 800),
-        alignment: isAnimated ? Alignment.bottomRight : Alignment.topCenter,
+        alignment: !isAnimated ? Alignment.bottomRight : Alignment.topCenter,
         child: ShapeWidget(
-          shape: isAnimated
+          shape: !isAnimated
               ? const Circle(
                   size: 100,
                   color: Colors.blueAccent,
                 )
-              : const Rectangle(
+              : const GlobalShape(
                   height: 100,
                   width: 200,
                   borderRadius: 0,
@@ -54,7 +54,11 @@ class _AnimationOneState extends State<AnimationOne> {
 class ShapeWidget extends StatelessWidget {
   final Shape shape;
   final void Function() onTap;
-  const ShapeWidget({super.key, required this.shape, required this.onTap});
+  const ShapeWidget({
+    super.key,
+    required this.shape,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
